@@ -109,7 +109,6 @@ public class FirstSteps {
             }
         }
         return true;
-
     }
 
     public void cube(int[] array) {

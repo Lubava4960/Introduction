@@ -159,7 +159,6 @@ public class main {
                 {15, 5, 1}
         }; // true - пустая строка считается упорядоченной
 
-
         System.out.println("matrix6 отсортирован по убыванию: " + firstStep.isSortedDescendant(matrix6)); // Ожидается true
         System.out.println("matrix7 отсортирован по убыванию: " + firstStep.isSortedDescendant(matrix7)); // Ожидается false
         System.out.println("matrix8 отсортирован по убыванию: " + firstStep.isSortedDescendant(matrix8)); // Ожидается true
