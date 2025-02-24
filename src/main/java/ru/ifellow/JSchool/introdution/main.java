@@ -1,7 +1,7 @@
 package ru.ifellow.introdution;
 
 public class main {
-    public static void DemoTest(String[] args) {
+    public static void main(String[] args) {
 
         FirstStep firstStep = new FirstStep();
         int x = 20;

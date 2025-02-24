@@ -100,9 +100,6 @@ public class FirstSteps {
     }
 
     public boolean isSortedDescendant(int[] array) {
-        if (array == null || array.length == 0) {
-            return true;
-        }
         for (int i = 1; i < array.length - 1; i++) {
             if (array[i] < array[i + 1]) {
                 return false;
@@ -110,19 +107,14 @@ public class FirstSteps {
         }
         return true;
     }
-
     public void cube(int[] array) {
         if (array == null) {
             return;
         }
-
         for (int i = 0; i < array.length; i++) {
             array[i] = array[i] * array[i] * array[i];
         }
-
     }
-
-
     public boolean find(int[] array, int value) {
         if (array == null) {
             return false;
@@ -133,7 +125,6 @@ public class FirstSteps {
             }
         }
         return false;
-
     }
 
     public void reverse(int[] array) {
@@ -151,7 +142,6 @@ public class FirstSteps {
         }
     }
 
-
     public boolean isPalindrome(int[] array) {
         if (array == null || array.length == 0) {
             return true;
@@ -168,42 +158,28 @@ public class FirstSteps {
         }
         return true;
     }
-
     public int sum(int[][] matrix) {
         if (matrix == null) {
             return 0;
         }
-        int totalSum = 0;
-        int i = 0;
-        while (i < matrix.length) {
-            if (matrix[i] != null) {
-                for (int j = 0; j < matrix[i].length; j++) {
-                    totalSum += matrix[i][j];
-                }
-            }
-
-            i++;
+        int total = 0;
+        for (int[] row : matrix) {
+            total += sum(row);
         }
-        return totalSum;
+        return total;
     }
 
     public int max(int[][] matrix) {
-        if (matrix == null) {
-            return 0;
+        if (matrix == null  || matrix.length == 0) {
+            return Integer.MIN_VALUE;
         }
-        int maxValue = Integer.MIN_VALUE;
-        int i = 0;
-        while (i < matrix.length) {
-            if (matrix[i] != null) {
-                for (int j = 0; j < matrix[i].length; j++) {
-                    if (matrix[i][j] > maxValue) {
-                        maxValue = matrix[i][j];
-                    }
-                }
-            }
-            i++;
+        int max = Integer.MIN_VALUE;
+
+        for (int[] row : matrix) { // Проходим по каждой строке матрицы
+            int rowMax = max(row); // Используем метод max для нахождения максимума в строке
+            max = Math.max(max, rowMax); // Обновляем общее максимальное значение
         }
-        return maxValue;
+        return max; // Возвращаем мак
     }
 
     public int diagonalMax(int[][] matrix) {
