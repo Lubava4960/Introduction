@@ -175,9 +175,9 @@ public class FirstStep {
         }
         int max = Integer.MIN_VALUE;
 
-        for (int[] row : matrix) { // Проходим по каждой строке матрицы
-            int rowMax = max(row); // Используем метод max для нахождения максимума в строке
-            max = Math.max(max, rowMax); // Обновляем общее максимальное значение
+        for (int[] row : matrix) {
+            int rowMax = max(row);
+            max = Math.max(max, rowMax); 
         }
         return max; // Возвращаем мак
     }
